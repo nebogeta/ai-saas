@@ -7,11 +7,13 @@ import { useAuth } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import {useState} from "react";
 
 const font = Montserrat({ weight: '600', subsets: ['latin'] });
 
 export const LandingNavbar = () => {
     const { isSignedIn } = useAuth();
+    const [loading, setLoading] = useState(false);
 
     return (
         <nav className="p-4 bg-transparent flex items-center justify-between">
@@ -25,7 +27,7 @@ export const LandingNavbar = () => {
             </Link>
             <div className="flex items-center gap-x-2">
                 <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-                    <Button variant="outline" className="rounded-full">
+                    <Button disabled={loading} variant="outline" className="rounded-full">
                         Get Started
                     </Button>
                 </Link>
