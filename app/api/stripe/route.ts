@@ -44,7 +44,7 @@ export async function GET() {
                     price_data: {
                         currency: "USD",
                         product_data: {
-                            name: "Ethio AI",
+                            name: "EthioAI",
                             description: "Unlimited AI Generations"
                         },
                         unit_amount: 2000,
@@ -66,3 +66,7 @@ export async function GET() {
         return new NextResponse("Internal Error", { status: 500 });
     }
 };
+
+
+
+
